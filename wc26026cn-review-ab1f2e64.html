@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收藏你的世界杯角落 · wc26026cn</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #fde6d2 0%, #f7d9c4 40%, #eed3b8 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 1.5rem;
+        }
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
+            border-radius: 42px;
+            padding: 2.8rem 2.5rem;
+            box-shadow: 0 20px 40px -12px rgba(160, 100, 60, 0.25), 0 8px 20px rgba(210, 150, 110, 0.15);
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #4d2e1b;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+        .subhead {
+            font-size: 1.1rem;
+            color: #7b5d47;
+            border-left: 4px solid #c88d6a;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.8rem 0;
+            font-weight: 350;
+        }
+        .intro {
+            background: #fcf5ef;
+            border-radius: 28px;
+            padding: 1.4rem 1.8rem;
+            margin-bottom: 2rem;
+            color: #3d2a1c;
+            font-size: 1.05rem;
+            line-height: 1.65;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .intro strong {
+            color: #935e3c;
+            font-weight: 500;
+        }
+        p {
+            color: #3d2a1c;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .highlight-link {
+            color: #aa6d44;
+            font-weight: 500;
+            text-decoration: none;
+            background: linear-gradient(to right, #f0dacb, #f0dacb) no-repeat left bottom / 0% 2px;
+            transition: background-size 0.25s ease;
+            padding-bottom: 1px;
+        }
+        .highlight-link:hover {
+            background-size: 100% 2px;
+            color: #7a4b2a;
+        }
+        .blockquote {
+            background: #f7ede6;
+            padding: 1.2rem 1.8rem;
+            border-radius: 30px;
+            margin: 1.8rem 0 2rem 0;
+            font-style: normal;
+            color: #4f3625;
+            border-left: 6px solid #dba882;
+            font-size: 0.98rem;
+            box-shadow: 0 2px 8px rgba(170, 120, 80, 0.08);
+        }
+        .blockquote span {
+            display: inline-block;
+            background: #d8b69f;
+            color: #2f1f13;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            padding: 0.15rem 1rem;
+            border-radius: 40px;
+            margin-right: 0.6rem;
+            text-transform: uppercase;
+        }
+        .faq-mini {
+            margin: 2rem 0 1.5rem 0;
+            border-top: 1px dashed #dcc2b2;
+            padding-top: 1.8rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4d2e1b;
+            margin-bottom: 0.15rem;
+            letter-spacing: -0.01em;
+        }
+        .faq-item p {
+            margin: 0.1rem 0 0.4rem 0;
+            color: #5d4030;
+            font-size: 0.95rem;
+        }
+        .visit-note {
+            background: #e1cfc0;
+            border-radius: 60px;
+            padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+            display: inline-block;
+            color: #2f1f13;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+        .btn-soft {
+            display: inline-block;
+            background: #d9b7a0;
+            color: #2d1c10;
+            padding: 0.4rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 450;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            border: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 4px rgba(110, 70, 40, 0.05);
+        }
+        .btn-soft:hover {
+            background: #cda68b;
+            transform: scale(1.01);
+        }
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #745b48;
+            border-top: 1px solid #e5d3c6;
+            padding-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .footer-note a {
+            color: #7d563b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b79279;
+        }
+        .footer-note a:hover {
+            border-bottom: 1px solid #7d563b;
+        }
+        @media (max-width: 520px) {
+            .card { padding: 1.8rem 1.2rem; border-radius: 30px; }
+            h1 { font-size: 1.9rem; }
+            .subhead { font-size: 0.95rem; padding-left: 0.7rem; }
+            .intro { padding: 1rem 1.2rem; }
+            .blockquote { padding: 1rem 1.2rem; }
+            .footer-note { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>再次遇见 · 世界杯</h1>
+        <div class="subhead">一个温和的收藏夹，属于你的足球角落</div>
+
+        <div class="intro">
+            <strong>有些页面，值得你放慢脚步。</strong> 不是所有的网址都需要收藏，但当你一次次想起同一个名字，那便是它与你之间的默契。今天，我们只是安静地聊一聊关于<span style="color:#9c6a48;">关注</span>这件事。
+        </div>
+
+        <p>
+            你是否也有过这样的时刻——刷到一条精彩的赛事片段，突然想起某个曾经浏览过的页面，却怎么也找不到地址栏里的踪迹。那种微妙的失落，像错过了一场补时绝杀。其实，一个好的起点，不需要反复搜寻。把<a href="https://wc26026cn.com" class="highlight-link">世界杯</a>放在书签里，更像是给自己留了一扇随时推开的窗。
+        </p>
+
+        <p>
+            很多朋友习惯把喜欢的站点设为主页，但对我来说，收藏夹里的位置更珍贵。它不喧哗，不弹窗，只在你想起来的时候安静地等在那里。而这里，正是一个可以反复回来、慢慢翻看的地方。页面内容会随赛季与故事更新，但那份踏实感始终没变。
+        </p>
+
+        <div class="blockquote">
+            <span>📌 备忘</span> 
+            我们常常高估一次性的热情，低估持续回访带来的安心。收藏，不是为了马上使用，而是为了在需要时，能自然地说出：“我知道那个地方。”
+        </div>
+
+        <p>
+            从小组赛的屏息到决赛夜的狂欢，从冷门的错愕到点球的窒默——关于 <a href="https://wc26026cn.com" class="highlight-link">世界杯</a> 的记忆，从来不是孤立的。它是和朋友争辩到凌晨的固执，也是一个人翻看旧集锦时的沉默。这个页面恰好容纳了这些碎片：赛历、背景、轶事，或许还有下一届的期待。它不追赶热点，但始终在场。
+        </p>
+
+        <p>
+            如果你也是那种“不会轻易收藏，但收了就会时不时看看”的人，那么这里很适合你。不需要记住复杂的域名，不需要在搜索引擎里反复试错；你只需要在浏览器的书签栏点一下，就回到了熟悉的入口。干净、直接、没有多余的干扰。
+        </p>
+
+        <!-- 紧凑的 FAQ 摘要，自然融入 -->
+        <div class="faq-mini">
+            <div class="faq-item">
+                <h3>⚽ 页面会经常变吗？</h3>
+                <p>内容会随赛事周期、故事专题陆续调整，但始终围绕 <a href="https://wc26026cn.com" class="highlight-link">世界杯</a> 这一主题。风格保持简洁，不堆砌广告。</p>
+            </div>
+            <div class="faq-item">
+                <h3>📎 收藏后怎么最快找到？</h3>
+                <p>建议在浏览器书签栏新建文件夹，命名为「常去」或「球场」，把链接拖进去。下次想看时，一键直达。</p>
+            </div>
+            <div class="faq-item">
+                <h3>🌍 是否支持移动端？</h3>
+                <p>页面针对手机、平板做了圆润的响应适配，无论屏幕大小，阅读体验都温和流畅。</p>
+            </div>
+        </div>
+
+        <div class="visit-note">
+            ⏳ 回访，是最好的认可
+        </div>
+
+        <div class="footer-note">
+            <span>下一次，你自然会想起这里</span>
+            <span>
+                <a href="https://wc26026cn.com" class="btn-soft">世界杯</a>
+                <span style="margin-left: 0.8rem; opacity: 0.7;">· 收藏即重逢</span>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
